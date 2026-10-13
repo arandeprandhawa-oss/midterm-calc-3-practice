@@ -1,0 +1,17 @@
+{
+    "title": "Midterm_calc_3_practice",
+    "layout": "tabs",
+    "zoom": 90,
+    "index": "pages/index.html",
+    "url": "https://arandeprandhawa-oss.github.io/midterm-calc-3-practice/",
+    "tabs": [
+        {
+            "label": "Midterm_calc_3_practice",
+            "file": "pages/index.html"
+        },
+        {
+            "label": "Calc III Homework 12–13",
+            "file": "pages/Calc3_Homework_12-13_Merged.html"
+        }
+    ]
+}
