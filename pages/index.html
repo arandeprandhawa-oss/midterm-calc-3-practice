@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Midterm_calc_3_practice</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1d2127;--muted:#5f6b7a;--line:#e3e6eb;--accent:#2f6fed;--accent-bg:#e8f0fe;--bad:#c62f4f;--bad-bg:#fdecf0}
+@media (prefers-color-scheme:dark){:root{--bg:#111418;--card:#181c21;--text:#e8ebef;--muted:#9aa4b1;--line:#2a3038;--accent:#7aa7ff;--accent-bg:#1e2a40;--bad:#ff7d9d;--bad-bg:#2e1921}}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg)}
+body{display:grid;place-items:center;min-height:100vh;min-height:100dvh;padding:24px 16px;color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{width:100%;max-width:380px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 26px 24px;box-shadow:0 1px 2px rgba(20,25,35,.05),0 10px 30px rgba(20,25,35,.07)}
+main[hidden]{display:none}
+.lock{width:44px;height:44px;border-radius:12px;background:var(--accent-bg);color:var(--accent);display:grid;place-items:center;margin-bottom:14px}
+h1{font-size:20px;font-weight:650;margin:0 0 4px;overflow-wrap:anywhere}
+p{margin:0;color:var(--muted)}
+form{margin-top:18px;display:grid;gap:10px}
+input{width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+input[aria-invalid="true"]{border-color:var(--bad)}
+button{font:inherit;font-weight:650;border:0;border-radius:10px;padding:10px 14px;background:var(--accent);color:#fff;cursor:pointer}
+@media (prefers-color-scheme:dark){button{color:#0c1220}}
+button:disabled{opacity:.6;cursor:default}
+.err{color:var(--bad);background:var(--bad-bg);border-radius:9px;padding:7px 11px;font-size:14px}
+.err[hidden]{display:none}
+.details{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--text);font-size:14px}
+.details a{color:var(--accent);font-weight:600;text-decoration:none}
+.details a:hover{text-decoration:underline}
+.note{font-size:13px;margin-top:8px}
+</style>
+</head>
+<body>
+<main id="gate" hidden>
+<div class="lock" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 018 0v3"/></svg></div>
+<h1>Midterm_calc_3_practice</h1>
+<p>This site has a password.</p>
+<form id="form" autocomplete="on">
+<input type="password" id="pw" name="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required>
+<div class="err" id="err" role="alert" hidden>That is not the password. Try again.</div>
+<button type="submit" id="go">Unlock</button>
+</form>
+<p class="details">Refer to Google Docs for details.</p>
+<p class="note">You only need to type it once on this device.</p>
+</main>
+<noscript><main><h1>Midterm_calc_3_practice</h1><p>Turn on JavaScript to open this site.</p></main></noscript>
+<script type="application/octet-stream" id="sp-data">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</script>
+<script>
+(function () {
+  "use strict";
+  var C = {"v":1,"id":"efc4ac15340b","salt":"e7db86c08763c2c69e0d85fb26dd1971","iter":200000,"iv":"a6d52209c01c2f75f3fa2d1274602426","mac":"ca0d603d11ad5bd876391765068ea31b6c7904f05d7adcd58cc3b144dfb60155"};
+  var KEY = "sp-lock:" + C.id;
+  var S = window.crypto && window.crypto.subtle;
+  var done = false;
+  // The page may only replace this screen once this screen has finished loading; before that the
+  // browser would insert it into this screen instead.
+  var ready = new Promise(function (r) { if (document.readyState === "complete") r(); else window.addEventListener("load", function () { r(); }); });
+  function $(id) { return document.getElementById(id); }
+  function hex(h) { var b = new Uint8Array(h.length / 2); for (var i = 0; i < b.length; i++) b[i] = parseInt(h.substr(i * 2, 2), 16); return b; }
+  function toHex(b) { var s = ""; for (var i = 0; i < b.length; i++) s += (b[i] < 16 ? "0" : "") + b[i].toString(16); return s; }
+  function b64(s) { var t = atob(s.replace(/\s+/g, "")), b = new Uint8Array(t.length); for (var i = 0; i < t.length; i++) b[i] = t.charCodeAt(i); return b; }
+  function load() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function save(v) { try { if (v) localStorage.setItem(KEY, v); else localStorage.removeItem(KEY); } catch (e) {} }
+  function derive(pw) {
+    return S.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]).then(function (base) {
+      return S.deriveBits({name: "PBKDF2", salt: hex(C.salt), iterations: C.iter, hash: "SHA-256"}, base, 512);
+    }).then(function (bits) { return new Uint8Array(bits); });
+  }
+  // Resolves true and shows the page if the key fits, false if it does not.
+  function unlock(raw, remember) {
+    var iv = hex(C.iv), ct = b64($("sp-data").textContent), msg = new Uint8Array(iv.length + ct.length);
+    msg.set(iv); msg.set(ct, iv.length);
+    return S.importKey("raw", raw.slice(32, 64), {name: "HMAC", hash: "SHA-256"}, false, ["verify"]).then(function (mk) {
+      return S.verify("HMAC", mk, hex(C.mac), msg);
+    }).then(function (ok) {
+      if (!ok || done) return false;
+      return S.importKey("raw", raw.slice(0, 32), {name: "AES-CBC"}, false, ["decrypt"]).then(function (ek) {
+        return S.decrypt({name: "AES-CBC", iv: iv}, ek, ct);
+      }).then(function (pt) { return ready.then(function () { return pt; }); }).then(function (pt) {
+        if (done) return true;
+        done = true;
+        if (remember) save(toHex(raw));
+        var page = new TextDecoder().decode(pt);
+        document.open(); document.write(page); document.close();
+        // Inside the site's tab bar: let it see the new page, so links to other tabs keep working.
+        try { if (window.frameElement) window.frameElement.dispatchEvent(new Event("load")); } catch (e) {}
+        return true;
+      });
+    });
+  }
+  function ask() {
+    var gate = $("gate"), pw = $("pw"), err = $("err"), go = $("go");
+    gate.hidden = false; pw.focus();
+    $("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!pw.value) return;
+      go.disabled = true; go.textContent = "Unlocking…"; err.hidden = true; pw.removeAttribute("aria-invalid");
+      derive(pw.value).then(function (raw) { return unlock(raw, true); }).then(function (ok) {
+        if (ok) return;
+        go.disabled = false; go.textContent = "Unlock"; err.hidden = false; pw.setAttribute("aria-invalid", "true"); pw.select();
+      }).catch(function () { go.disabled = false; go.textContent = "Unlock"; err.hidden = false; err.textContent = "This browser could not unlock the page."; });
+    });
+  }
+  if (!S) {
+    $("gate").hidden = false;
+    $("form").hidden = true;
+    $("err").hidden = false;
+    $("err").textContent = location.protocol === "https:" ? "This browser is too old to open this site." : "Open this site through its https:// address.";
+    return;
+  }
+  // Unlocked in another tab or page of this site: open here too.
+  window.addEventListener("storage", function (e) { if (e.key === KEY && e.newValue && !done) unlock(hex(e.newValue), false); });
+  var saved = load();
+  if (saved && /^[0-9a-f]{128}$/.test(saved)) {
+    unlock(hex(saved), false).then(function (ok) { if (!ok) { save(null); ask(); } }, function () { save(null); ask(); });
+  } else {
+    ask();
+  }
+})();
+</script>
+</body>
+</html>
